@@ -28,10 +28,10 @@ public class ProgramaMain {
 		gesUsu.addUsuario(u);
 		gesUsu.addUsuario(u2);
 		
-		gesUsu.deleteUsers();;
-		gesUsu.deleteUser(u2);
 		gesUsu.filtrarEdad(10);
 		gesUsu.filtrarEdad2(0, 30);
+		gesUsu.deleteUsers();;
+		gesUsu.deleteUser(u2);
 		u = gesUsu.modificarUsuario(u);
 		
 		/*Loco l = new Loco();

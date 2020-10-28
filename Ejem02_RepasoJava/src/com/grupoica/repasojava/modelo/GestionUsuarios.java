@@ -89,20 +89,37 @@ public class GestionUsuarios {
 		System.out.println("¿Que deseas modificar? \n 1:Nombre\n2:Edad\n3:Nombre y edad");
 		switch(sc.nextInt()) {
 		case 1:
-			u.setNombre(sc.next());
+			u.setNombre(modificarNombre());
 			System.out.println("El nuevo nombre del usuario es: " + u.getNombre());
-			sc.close();
+	
 		case 2:
-			u.setEdad(sc.nextInt());
-			sc.close();
+			u.setEdad(modificarEdad());
+
 		case 3: 
-			u.setNombre(sc.next());
-			u.setEdad(sc.nextInt());
+			u.setNombre(modificarNombre());
+			u.setEdad(modificarEdad());
+
 			System.out.println("El nuevo nombre del usuario es: " + u.getNombre() + "\n Y su nueva"
 					+ " edad es " + u.getEdad());
-			sc.close();
+
 		}
-		
+		sc.close();
+		return u;
+	}
+	
+	public String modificarNombre() {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.next();
+		return s;
+	}
+	public int modificarEdad() {
+		Scanner sc = new Scanner(System.in);
+		int i = sc.nextInt();
+		return i;
+	}
+	public Usuario modificarNombreYEdad(Usuario u, String nom, int num) {
+		u.setNombre(nom);
+		u.setEdad(num);
 		return u;
 	}
 	
