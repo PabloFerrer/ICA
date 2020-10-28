@@ -26,21 +26,60 @@
             //como en java, usa this para el objeto recien creado
             this.listaUsuarios = new Array();
 
-            var us = new Usuario(10, "pepe");
-
-            document.write(us.edad);
-            document.write(us.getNombre());
-            this.listaUsuarios.push(us);
 
             this.listarUsuarios = function() {
                 for (let i = 0; i < this.listaUsuarios.length; i++) {
                     document.write("<br> - " + this.listaUsuarios[i]);
                 }
             }
+            this.modificarNombre = function(u, nom) {
+                u.nombre = nom;
+            }
+            this.modificarEdad = function(u, num) {
+                u.edad = num;
+            }
+            this.modificarNombreYEdad = function(u, nom, num) {
+                u.nombre = nom;
+                u.edad = num;
+
+            }
+
+            this.eliminarUsuarios = function(ar) {
+                while (this.listaUsuarios.length > 0) {
+                    this.listaUsuarios.pop();
+                }
+            }
+
+            this.filtrarEdadConcreta = function(e) {
+                for (let i = 0; i < this.listaUsuarios.length; i++) {
+                    document.write("test");
+                    if (this.listaUsuarios[i].edad == e) {
+                        document.write("<br>El Usuario: " + this.listaUsuarios[i].nombre + "tiene " + e +
+                            " años.")
+                    }
+                }
+            }
 
         }
         let gesUsu = new GestionUsuario();
-        gesUsu.listarUsuarios();
+
+        let us = new Usuario(24, "Pablo");
+        let us2 = new Usuario(10, "pepe");
+
+        gesUsu.listaUsuarios.push(us);
+        gesUsu.listaUsuarios.push(us2);
+
+        gesUsu.modificarNombre(us, "Pepe");
+        document.write("El nombre del usuario es: " + us.nombre);
+        gesUsu.modificarEdad(us, 15);
+        document.write("<br>La edad del usuario es: " + us.edad);
+        gesUsu.modificarNombreYEdad(us, "Juanito", 27);
+        document.write("<br>El nombre del usuario es: " + us.nombre + " La edad del usuario es: " + us.edad);
+
+        gesUsu.eliminarUsuarios();
+        document.write("<br> El tamaño del Array es: " + gesUsu.listaUsuarios.length);
+
+        gesUsu.filtrarEdadConcreta(10);
     </script>
 </body>
 
