@@ -1,6 +1,7 @@
 package com.grupoica.repasojava;
 
 import com.grupoica.repasojava.modelo.GestionUsuarios;
+import com.grupoica.repasojava.modelo.Loco;
 import com.grupoica.repasojava.modelo.Usuario;
 
 public class ProgramaMain {
@@ -22,12 +23,23 @@ public class ProgramaMain {
 	 */
 	public static void main(String[] args) {
 		GestionUsuarios gesUsu = new GestionUsuarios();
-		Usuario usu = new Usuario("Hola",10);
-		gesUsu.addUsuario(usu);
-		gesUsu.listarUsuarios();
+		Usuario u = new Usuario("Pepe",10);
+		Usuario u2 = new Usuario("Juan", 20);
+		gesUsu.addUsuario(u);
+		gesUsu.addUsuario(u2);
 		
-		//EjemploMemoria.pruebaPasoPorValor();
-		EjemploMemoria.pruebaPasoPorReferencia();
+		//gesUsu.deleteUsers();;
+		//u = gesUsu.modificarUsuario(u);
+		gesUsu.filtrarEdad(10);
+		gesUsu.filtrarEdad2(0, 30);
+		
+		
+		/*Loco l = new Loco();
+		l.setNombre("Joker");
+		l.setTipoLocura(true);*/
+		//gesUsu.listarUsuarios();
+//		EjemploMemoria.pruebaPasoPorValor();
+		//EjemploMemoria.pruebaPasoPorReferencia();
 	}
 
 }
