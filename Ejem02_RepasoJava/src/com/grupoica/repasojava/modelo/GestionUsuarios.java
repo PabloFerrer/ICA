@@ -91,14 +91,16 @@ public class GestionUsuarios {
 		case 1:
 			u.setNombre(sc.next());
 			System.out.println("El nuevo nombre del usuario es: " + u.getNombre());
+			sc.close();
 		case 2:
 			u.setEdad(sc.nextInt());
+			sc.close();
 		case 3: 
 			u.setNombre(sc.next());
 			u.setEdad(sc.nextInt());
 			System.out.println("El nuevo nombre del usuario es: " + u.getNombre() + "\n Y su nueva"
 					+ " edad es " + u.getEdad());
-			
+			sc.close();
 		}
 		
 		return u;
