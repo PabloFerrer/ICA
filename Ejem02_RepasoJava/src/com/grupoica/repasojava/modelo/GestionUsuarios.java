@@ -67,20 +67,34 @@ public class GestionUsuarios {
 	}
 	
 	public void filtrarEdad(int num) {
+		boolean boo = true ;
 		for(int i = 0; i<listaUsuarios.size();i++) {
 			if(listaUsuarios.get(i).getEdad() == num ) {
 				System.out.println("El usuario " + listaUsuarios.get(i).getNombre() + " tiene " + num
 						+ " años.");
+				boo = true;
+			}else {
+				boo = false;
 			}
+		}
+		if(boo==false) {
+			System.out.println("No se ha encontrado usuario con esa edad");
 		}
 	}
 	
 	public void filtrarEdad2(int num, int num2) {
+		boolean b = true;
 		for(int i = 0; i<listaUsuarios.size();i++) {
 			if(listaUsuarios.get(i).getEdad() > num && listaUsuarios.get(i).getEdad() < num2 ) {
 				System.out.println("El usuario " + listaUsuarios.get(i).getNombre() + " tiene entre " 
 			+ num + " y " + num2 + " años.");
+				b = true;
+			}else {
+				b = false;
 			}
+		}
+		if(b==false) {
+			System.out.println("No se han encontrado usuarios con ese rango de edad");
 		}
 	}
 	

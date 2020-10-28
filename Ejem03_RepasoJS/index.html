@@ -33,29 +33,45 @@
                 }
             }
             this.modificarNombre = function(u, nom) {
+                document.write("<br><br>Modificar nombre: ");
                 u.nombre = nom;
             }
             this.modificarEdad = function(u, num) {
+                document.write("<br><br>Modificar edad: ");
                 u.edad = num;
             }
             this.modificarNombreYEdad = function(u, nom, num) {
+                document.write("<br><br>Modificar nombre y edad: ");
                 u.nombre = nom;
                 u.edad = num;
 
             }
 
             this.eliminarUsuarios = function(ar) {
+                document.write("<br><br>Eliminando usuarios: ");
                 while (this.listaUsuarios.length > 0) {
                     this.listaUsuarios.pop();
                 }
             }
 
             this.filtrarEdadConcreta = function(e) {
+                document.write("<br><br>Filtrando por edad concreta: " + e);
                 for (let i = 0; i < this.listaUsuarios.length; i++) {
-                    document.write("test");
+
                     if (this.listaUsuarios[i].edad == e) {
-                        document.write("<br>El Usuario: " + this.listaUsuarios[i].nombre + "tiene " + e +
-                            " años.")
+                        document.write("<br>El Usuario: " + this.listaUsuarios[i].nombre + " tiene " + e +
+                            " anios.")
+                    }
+                }
+            }
+
+            this.filtrarEdadRango = function(num1, num2) {
+                document.write("<br><br>Filtrando por rango de edad: " + num1 + " - " + num2);
+                for (let i = 0; i < this.listaUsuarios.length; i++) {
+
+                    if (this.listaUsuarios[i].edad > num1 && this.listaUsuarios[i].edad < num2) {
+                        document.write("<br>El Usuario: " + this.listaUsuarios[i].nombre + " tiene entre " +
+                            num1 + " y " + num2 + " anios.")
                     }
                 }
             }
@@ -69,17 +85,18 @@
         gesUsu.listaUsuarios.push(us);
         gesUsu.listaUsuarios.push(us2);
 
+        gesUsu.filtrarEdadConcreta(24);
+        gesUsu.filtrarEdadRango(1, 30);
+
         gesUsu.modificarNombre(us, "Pepe");
-        document.write("El nombre del usuario es: " + us.nombre);
+        document.write("<br>El nombre del usuario es: " + us.nombre);
         gesUsu.modificarEdad(us, 15);
         document.write("<br>La edad del usuario es: " + us.edad);
         gesUsu.modificarNombreYEdad(us, "Juanito", 27);
         document.write("<br>El nombre del usuario es: " + us.nombre + " La edad del usuario es: " + us.edad);
 
         gesUsu.eliminarUsuarios();
-        document.write("<br> El tamaño del Array es: " + gesUsu.listaUsuarios.length);
-
-        gesUsu.filtrarEdadConcreta(10);
+        document.write("<br> El tamano del Array es: " + gesUsu.listaUsuarios.length);
     </script>
 </body>
 
