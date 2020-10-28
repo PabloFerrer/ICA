@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function memoria() {
+            var arr = new Array;
+            var str = "test";
+            arr.push(1);
+            otra(arr, str);
+            document.write("<br>Array " + arr[0] + " String " + str);
+        }
+
+        function otra(ar, st) {
+            document.write("<br>Array " + ar[0] + " String " + st);
+            ar[0] = 12;
+            st = "patata";
+            document.write("<br>Array " + ar[0] + " String " + st);
+        }
+        let mem = new memoria;
+    </script>
+
+</body>
+
+</html>

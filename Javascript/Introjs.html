@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Intro JS</title>
+</head>
+<body>
+	<h1>Intro JS</h1>
+
+	<script type="text/javascript">
+		var mensajePrevio = "Variable global";
+		
+
+		function repetirMensaje(veces){
+			var mensajeFun = "Variable local de la funcion";
+			for(var i = 0; i<veces;i++){
+				let texto = mensajeFun + " " + i;
+				document.write("<p>" + texto + "</p>");
+			}
+		document.write("<p>" + mensajeFun + "</p>");
+		}
+		repetirMensaje(5);
+		
+	</script>
+</body>
+</html>

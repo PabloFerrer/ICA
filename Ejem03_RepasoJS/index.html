@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Repaso JS</title>
+</head>
+
+<body>
+    <h1>Repaso JS: Arrays</h1>
+    <script type="text/javascript">
+        function Usuario(edad, nombre) {
+            this.edad = edad;
+            //variable local que enclausuramos en un metodo
+            var nombre = nombre;
+            this.getNombre = function() {
+                //enclausuramos porque usamos una variable local externa a la funcion
+                //para poder devolverla JS hace que persista en el tiempo
+                return nombre;
+            }
+        }
+
+        //para usar encapsulación en javascript se usan clousures (Aunque es ñapa)
+        function GestionUsuario() {
+            //como en java, usa this para el objeto recien creado
+            this.listaUsuarios = new Array();
+
+            var us = new Usuario(10, "pepe");
+
+            document.write(us.edad);
+            document.write(us.getNombre());
+            this.listaUsuarios.push(us);
+
+            this.listarUsuarios = function() {
+                for (let i = 0; i < this.listaUsuarios.length; i++) {
+                    document.write("<br> - " + this.listaUsuarios[i]);
+                }
+            }
+
+        }
+        let gesUsu = new GestionUsuario();
+        gesUsu.listarUsuarios();
+    </script>
+</body>
+
+</html>
