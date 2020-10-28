@@ -58,6 +58,14 @@ public class GestionUsuarios {
 		System.out.println("El tamaño del array es: " + listaUsuarios.size());
 	}
 	
+	public void deleteUser(Usuario u) {
+		for(int i = 0; i<listaUsuarios.size();i++) {
+			if(listaUsuarios.get(i).getNombre() == u.getNombre()) {
+				listaUsuarios.remove(i);
+			}
+		}
+	}
+	
 	public void filtrarEdad(int num) {
 		for(int i = 0; i<listaUsuarios.size();i++) {
 			if(listaUsuarios.get(i).getEdad() == num ) {

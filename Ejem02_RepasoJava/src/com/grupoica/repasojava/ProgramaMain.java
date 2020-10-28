@@ -29,6 +29,7 @@ public class ProgramaMain {
 		gesUsu.addUsuario(u2);
 		
 		//gesUsu.deleteUsers();;
+		//gesUsu.deleteUser(u2);
 		//u = gesUsu.modificarUsuario(u);
 		gesUsu.filtrarEdad(10);
 		gesUsu.filtrarEdad2(0, 30);

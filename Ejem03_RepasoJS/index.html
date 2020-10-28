@@ -12,12 +12,13 @@
         function Usuario(edad, nombre) {
             this.edad = edad;
             //variable local que enclausuramos en un metodo
-            var nombre = nombre;
+            this.nombre = nombre;
+            /*var nombre = nombre;
             this.getNombre = function() {
                 //enclausuramos porque usamos una variable local externa a la funcion
                 //para poder devolverla JS hace que persista en el tiempo
                 return nombre;
-            }
+            }*/
         }
 
         //para usar encapsulación en javascript se usan clousures (Aunque es ñapa)
