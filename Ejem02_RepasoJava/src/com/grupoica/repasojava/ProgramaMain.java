@@ -25,14 +25,16 @@ public class ProgramaMain {
 		GestionUsuarios gesUsu = new GestionUsuarios();
 		Usuario u = new Usuario("Pepe",10);
 		Usuario u2 = new Usuario("Juan", 20);
+		
 		gesUsu.addUsuario(u);
 		gesUsu.addUsuario(u2);
+		gesUsu.addUsuario(new Usuario("dsad", 15));
 		
-		gesUsu.filtrarEdad(11);
+		gesUsu.filtrarEdad(10);
 		gesUsu.filtrarEdad2(0, 30);
 		gesUsu.deleteUsers();;
 		gesUsu.deleteUser(u2);
-		u = gesUsu.modificarUsuario(u);
+		//u = gesUsu.modificarUsuario(u);
 		
 		/*Loco l = new Loco();
 		l.setNombre("Joker");
