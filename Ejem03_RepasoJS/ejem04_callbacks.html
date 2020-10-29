@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function sumar(x, y) {
+            return x + y;
+        }
+
+        var restar = function(x, y) {
+            return x - y;
+        }
+        var multiplicar = new Function("x", "y", "{ return x * y; }");
+
+        function sumarArrays(arr_1, arr_2) {
+            let arraySuma = [];
+            for (let i = 0; i < arr_1.length; i++) {
+                arraySuma[i] = arr_1[i] + arr_2[i];
+            }
+            return arraySuma;
+        }
+        /*Las funciones callback o retro llamada, les pasamos una función como parametro y dentro de
+        nuestra funcion se invoca a esta funcion callback
+        */
+        function operarArrays(arr_1, arr_2, funcionCallback) {
+            let arrayRes = [];
+            for (let i = 0; i < arr_1.length && i < arr_2.length; i++) {
+                arrayRes[i] = funcionCallback(arr_1[i], arr_2[i]);
+            }
+            return arrayRes;
+        }
+
+
+        let arrResult = sumarArrays([2, 3, 4], [10, 15, 20]);
+        console.log(`Suma: ${arrResult}`);
+
+        console.log(`Empezamos a usar callbacks `);
+        let arrMult = operarArrays([2, 3, 4], [10, 15, 20], sumar);
+        console.log(`Resta: ${arrMult} `);
+
+        let arrDiv = operarArrays([10, 15, 20], [2, 3, 4], function(x, y) {
+            return x / y
+        });
+        console.log(`Resta: ${arrDiv} `);
+        let arr = [10, 15, 20];
+        let arr2 = [2, 3, 4];
+        let arrRes = operarArrays(arr, arr2, (x, y) => {
+            return x % y
+        });
+        console.log(`Resta: ${arrRes} `);
+
+        let arrPor = operarArrays(arr, arr2, (x, y) => {
+            return x + (x * y) / 100
+        });
+        console.log(`Resta: ${arrPor} `);
+    </script>
+</body>
+
+</html>
