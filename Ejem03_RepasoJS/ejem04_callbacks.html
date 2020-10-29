@@ -8,6 +8,22 @@
 </head>
 
 <body>
+
+    <input type="button" value="Haz click" onclick="muestraMensaje()">
+    <input id="btn_1" type="button" value="Haz click 2" onclick="">
+    <input id="btn_2" type="button" value="Haz click 3" onclick="">
+
+    <script>
+        var muestraMensaje = function() {
+            alert("Mensaje 1  mostrado");
+        }
+
+        document.getElementById("btn_1").onclick = () => alert("Mensaje 2 mostrado");
+        let btn_3 = document.getElementsByTagName("input")[2];
+        btn_3.addEventListener("click", () => alert("Boton 3"));
+        btn_3.addEventListener("click", () => alert("Boton 3 de otro listener"));
+    </script>
+
     <script>
         function sumar(x, y) {
             return x + y;

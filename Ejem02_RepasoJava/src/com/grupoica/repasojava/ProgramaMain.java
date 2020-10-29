@@ -23,6 +23,7 @@ public class ProgramaMain {
 	 *   - Polimorfismo
 	 */
 	public static void main(String[] args) {
+		EjemploLambdas.ejecutarLambdas();
 		ProbandoVehiculos.probar();
 		/*GestionUsuarios gesUsu = new GestionUsuarios();
 		Usuario u = new Usuario("Pepe",10);
