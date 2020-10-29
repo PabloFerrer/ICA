@@ -1,5 +1,6 @@
 package com.grupoica.repasojava;
 
+import com.grupoica.repasojava.abstractas_interfaces.ProbandoVehiculos;
 import com.grupoica.repasojava.modelo.GestionUsuarios;
 import com.grupoica.repasojava.modelo.Loco;
 import com.grupoica.repasojava.modelo.Usuario;
@@ -22,26 +23,29 @@ public class ProgramaMain {
 	 *   - Polimorfismo
 	 */
 	public static void main(String[] args) {
-		GestionUsuarios gesUsu = new GestionUsuarios();
+		ProbandoVehiculos.probar();
+		/*GestionUsuarios gesUsu = new GestionUsuarios();
 		Usuario u = new Usuario("Pepe",10);
 		Usuario u2 = new Usuario("Juan", 20);
 		
 		gesUsu.addUsuario(u);
 		gesUsu.addUsuario(u2);
 		gesUsu.addUsuario(new Usuario("dsad", 15));
-		
+		EjemploHashMap.probandoHashMap();
 		gesUsu.filtrarEdad(10);
 		gesUsu.filtrarEdad2(0, 30);
 		gesUsu.deleteUsers();;
 		gesUsu.deleteUser(u2);
 		//u = gesUsu.modificarUsuario(u);
+
 		
 		/*Loco l = new Loco();
 		l.setNombre("Joker");
-		l.setTipoLocura(true);*/
+		l.setTipoLocura(true);
 		//gesUsu.listarUsuarios();
 //		EjemploMemoria.pruebaPasoPorValor();
 		//EjemploMemoria.pruebaPasoPorReferencia();
+		*/
 	}
 
 }

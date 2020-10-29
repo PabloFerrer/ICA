@@ -3,6 +3,8 @@ package com.grupoica.repasojava.modelo;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import com.grupoica.repasojava.EjemploHashMap;
+
 /*
  * Clase que se encargará de las operaciones C.R.U.D.
  * Create Read Update Delete
@@ -34,6 +36,7 @@ public class GestionUsuarios {
 	
 	public void addUsuario(Usuario usu) {
 		this.listaUsuarios.add(usu);
+		EjemploHashMap.diccUsuarios.put(usu.getNombre(),usu);
 	}
 	
 	public void mostrarUsuario(String nombre) {
