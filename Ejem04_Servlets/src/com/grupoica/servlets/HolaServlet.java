@@ -40,15 +40,15 @@ public class HolaServlet extends HttpServlet {
 		}
 		html+="</body></html>";
 				
-		response.getWriter().append(html).append(request.getContextPath());
+		response.getWriter().append(html);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("<h1>Hola desde servlet</h1> ").append(request.getContextPath());
+		response.getWriter().append("<h1>Hola desde servlet</h1> ");
 		String veces = request.getParameter("veces");
 		
 		for(int i = 0;i<Integer.parseInt(veces);i++) {
-			response.getWriter().append("<p>" + i + "vez</p> ").append(request.getContextPath());
+			response.getWriter().append("<p>" + i + "vez</p> ");
 		}
 		
 	}
