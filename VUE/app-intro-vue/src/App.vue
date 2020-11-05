@@ -3,7 +3,9 @@
     <CompPatata></CompPatata>
     <img alt="Vue logo" src="./assets/logo.png">
     <HolaComp msg="Bienvenido a tu Vue.js App"/>
-    
+    <ul>
+      <li v-for="heroe in heroes" :key="heroe.id">{{heroe.nombre}}</li>
+    </ul>
 
   </div>
 </template>
@@ -18,6 +20,20 @@ export default {
   components: {
     HolaComp,
     CompPatata
+  },
+  data:{
+    return{
+      heroes:[]
+    };
+  },
+  beforeCreate(){
+    let prometemeHeroes = fetch("http://localhost:/8080/api/heroes");
+    //La variable la recibiremos en formato JSON asincronamente, no en el momento, en una callback
+    prometemeHeroes.then((respuestaHttp) => {
+        return respuestaHttp.json()
+    }).then((data)=> {
+      this.heroes = data;
+    })
   }
 }
 </script>
